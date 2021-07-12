@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="home">
     
   </div>
 </template>
@@ -8,15 +8,13 @@
   
 
   export default {
-    name: 'App',
+    name: "Home",
     components: {
       
     }
-}
+  }
 </script>
 
-<style>
-  @import 'assets/css/base.css';
-
-  
+<style scoped>
+   
 </style>
