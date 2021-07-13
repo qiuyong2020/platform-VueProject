@@ -6,20 +6,17 @@ export function request(config) {
     baseURL: "http://123.207.32.32:8000",
     timeout: 5000
   })
-
   // 2.axios的拦截器
   // axios.interceptors //全局拦截
   // 2.1、请求拦截
   instance.interceptors.request.use(config => {//请求发送成功
     console.log(config);
-
     /**
      *  什么情况下要用到拦截器？
      *      1.config中的一些配置信息不符合服务器的要求；
      *      2.每次发送网络请求时，都希望在界面中显示一个请求的图标或动画效果；
      *      3.某些网络请求（比如登录时的 token 令牌，拦截请求并导引到登录界面）必须携带一些特殊的信息。
     */
-
     // 拦截请求配置后，必须将请求的配置返回，否则内部拿不到config会导致所有请求失败
     return config
   }, err => {// 请求发送失败
@@ -34,7 +31,6 @@ export function request(config) {
   }, err => { //响应失败
     console.log(err);
   })
-
   // 3.发送真正的网络请求
   return instance(config)
 }
